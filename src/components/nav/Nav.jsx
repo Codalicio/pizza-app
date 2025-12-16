@@ -1,10 +1,7 @@
-import { useState } from "react";
 import NavItem from "./NavItem";
 
-export default function Nav() {
+export default function Nav({ activeTab, setActiveTab }) {
   const navItems = ["Pizzas", "Sides", "Desserts", "Drinks", "Deals"];
-
-  const [isActive, setIsActive] = useState("Pizzas");
 
   return (
     <>
@@ -14,8 +11,8 @@ export default function Nav() {
             key={item}
             label={item}
             isLast={index === navItems.length - 1}
-            isActive={isActive === item}
-            onClickItem={() => setIsActive(item)}
+            isActive={activeTab === item}
+            onClickItem={() => setActiveTab(item)}
           />
         ))}
       </div>
