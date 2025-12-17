@@ -231,7 +231,7 @@ export default function Info({ activeTab, searchTerm }) {
           {basicDetails[`${activeTab}`].description}
         </p>
       </div>
-      <div className="flex flex-wrap gap-3 w-300 justify-evenly">
+      <div className="flex flex-wrap gap-3 w-full justify-evenly">
         {/* {basicDetails[`${activeTab}`].products.map((data, index) => {
           return (
             <Card
