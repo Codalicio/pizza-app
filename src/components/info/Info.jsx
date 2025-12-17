@@ -224,10 +224,10 @@ export default function Info({ activeTab, searchTerm }) {
   return (
     <>
       <div>
-        <h1 className="text-3xl text-center my-3">
+        <h1 className="text-2xl sm:text-3xl text-center my-3">
           Our {basicDetails[`${activeTab}`].title}
         </h1>
-        <p className="text-md text-center mb-15">
+        <p className="text-sm sm:text-md text-center mb-8">
           {basicDetails[`${activeTab}`].description}
         </p>
       </div>
