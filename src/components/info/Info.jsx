@@ -1,6 +1,6 @@
 import Card from "../card/Card";
 
-export default function Info({ activeTab }) {
+export default function Info({ activeTab, searchTerm }) {
   const basicDetails = {
     Pizzas: {
       title: "Pizzas",
@@ -217,6 +217,10 @@ export default function Info({ activeTab }) {
     },
   };
 
+  const filteredProducts = basicDetails[activeTab].products.filter((product) =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <div>
@@ -228,7 +232,7 @@ export default function Info({ activeTab }) {
         </p>
       </div>
       <div className="flex flex-wrap gap-3 w-[1200px] justify-evenly">
-        {basicDetails[`${activeTab}`].products.map((data, index) => {
+        {/* {basicDetails[`${activeTab}`].products.map((data, index) => {
           return (
             <Card
               key={index}
@@ -237,7 +241,19 @@ export default function Info({ activeTab }) {
               description={data.description}
             />
           );
-        })}
+        })} */}
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((data, index) => (
+            <Card
+              key={index}
+              image={data.img}
+              title={data.title}
+              description={data.description}
+            />
+          ))
+        ) : (
+          <p className="text-center text-gray-500 mt-10">No results found</p>
+        )}
       </div>
     </>
   );
