@@ -231,7 +231,7 @@ export default function Info({ activeTab, searchTerm }) {
           {basicDetails[`${activeTab}`].description}
         </p>
       </div>
-      <div className="flex flex-wrap gap-3 w-full justify-evenly">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {/* {basicDetails[`${activeTab}`].products.map((data, index) => {
           return (
             <Card
@@ -252,7 +252,9 @@ export default function Info({ activeTab, searchTerm }) {
             />
           ))
         ) : (
-          <p className="text-center text-gray-500 mt-10">No results found</p>
+          <p className="col-span-full text-center text-gray-500 text-sm sm:text-base mt-10">
+            No results found
+          </p>
         )}
       </div>
     </>
