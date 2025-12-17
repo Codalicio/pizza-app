@@ -5,7 +5,7 @@ export default function Nav({ activeTab, setActiveTab }) {
 
   return (
     <>
-      <div className="flex my-3 border-2 border-gray-300">
+      <div className="flex flex-col sm:flex-row my-3 border-2 border-gray-300">
         {navItems.map((item, index) => (
           <NavItem
             key={item}
