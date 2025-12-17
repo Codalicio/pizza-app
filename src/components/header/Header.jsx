@@ -5,8 +5,9 @@ export default function Header() {
         <img
           src="https://www.pizzahut.co.in/_next/static/static/images/logo.5cf87982123883ead9e716c3e884e828.jpg"
           alt="pizza hut logo"
-          width={"75px"}
-          height={"75px"}
+          // width={"75px"}
+          // height={"75px"}
+          className="w-14 sm:w-16 md:w-20"
         />
       </div>
     </>
